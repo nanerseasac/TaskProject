@@ -31,6 +31,7 @@ const fetchData = (keyword) => {
 			// check if the request is between >= 200 and < 300
 			// if it is parse the response JSON data
 			const data = JSON.parse(xhr.responseText); // call the displayResults function with the retrieved data
+			resultsDiv.innerHTML = ""; // clear the results div to make a new request
 			displayResults(data);
 		} else {
 			resultsDiv.innerHTML = `<p>Error: ${xhr.statusText}</p>`; // If request fails, display an error message with the status text
@@ -40,6 +41,9 @@ const fetchData = (keyword) => {
 	xhr.onerror = () => {
 		// if error during the request diplay this paragraph
 		resultsDiv.innerHTML = "<p>Error: Connection failed</p>";
+		if (xhr.status >= 200 && xhr.status < 300) {
+			resultsDiv.innerHTML = "";
+		}
 	};
 
 	xhr.send();

@@ -18,7 +18,7 @@ body {
 .firstDiv {
 	display: flex;
 	align-items: center;
-	width: 600px;
+	width: 40rem;
 	margin: 0 auto;
 	padding: 20px;
 	border-radius: 10px;
@@ -33,7 +33,7 @@ body {
 }
 
 #btn {
-	padding: 8px 12px;
+	padding: 0.6rem 0.8rem;
 	background-color: #d1ac09;
 	color: #fff;
 	border: none;
@@ -111,4 +111,34 @@ body {
 .ratingStars .stars::before {
 	content: "\2605 \2605 \2605 \2605 \2605";
 	color: goldenrod;
+}
+
+@media (max-width: 1024px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 2rem;
+	}
+	.imgg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.item {
+		padding-left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 4rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.firstDiv {
+		width: 20rem;
+	}
 }
